@@ -1,0 +1,15 @@
+digraph G {
+    start -> b
+    # STEP add c
+    b -> c
+    # STEP add back
+    c -> b
+    # STEP add d
+    start -> d
+    # STEP loop in
+    d -> b
+    # STEP extra
+    d -> extra
+    # END
+    b -> end
+}
