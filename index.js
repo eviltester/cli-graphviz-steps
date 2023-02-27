@@ -89,7 +89,11 @@ chromeLauncher.launch({
 
         await Page.startScreencast({format: 'png', everyNthFrame: 1});
         
-        uniqueFolderName = Date.now().toString();
+        if (!fs.existsSync("output")){
+            fs.mkdirSync("output");
+        }
+
+        uniqueFolderName = "output/" + Date.now().toString();
         if (!fs.existsSync(uniqueFolderName)){
             fs.mkdirSync(uniqueFolderName);
         }
